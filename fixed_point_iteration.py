@@ -1,22 +1,32 @@
 ## Fixed-Point Iteration
-## Numerical Analysis
-## David Toth
+## Numerical Analysis 10e by
+## Burden, Burden, and Faires
 
+from math import exp, log, sin, cos, tan, pi, e
 
-def fixedPoint(g, p0, tol, max_iter):
+def fixedPoint(p0, tol, max_iter):
+    """
+    
+    p0       : initial estimate
+    tol      : tolerance of error
+    max_iter : maximum number of iterations
+        
+    """
 
+    f_inp = input("Enter the function: ")
+    f = eval("lambda x:" + f_inp)
+    
     i = 1
 
     print("i", "p", sep='\t')
     
     while i <= max_iter:
 
-        p = g(p0)
+        p = f(p0)
 
         print(i, p, sep='\t')
 
         if abs(p - p0) < tol:
-
             return p
 
         p0 = p
@@ -25,6 +35,6 @@ def fixedPoint(g, p0, tol, max_iter):
 
     print("Method failed after ", max_iter, " iterations.")
 
-    return None
+    return
 
         
