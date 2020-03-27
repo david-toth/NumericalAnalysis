@@ -3,7 +3,7 @@
 import numpy as np
 
 def Hermite(x, f, fp):
-    
+
     n = len(x)
     z = np.zeros(2*n)
     Q = np.zeros((2*n, 2*n))
